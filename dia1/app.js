@@ -9,7 +9,7 @@ console.log('Luiz otávio miranda tem',idade,'anos, pesa',peso,'kgs, tem uma alt
 
 
 
-console.log('oi td bem eu sou o "joao" e estou aprendendo js às '+ 10+' da manhã');
+console.log(`oi td bem eu sou o "joao" e estou aprendendo js às ${n} da manhã`);
 console.log('oi td bem eu sou o "joao" e estou aprendendo js às',10,'da manhã');
 console.log('oi td bem eu sou o "joao" e estou aprendendo js às',n,'da manhã');
 
