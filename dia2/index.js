@@ -32,3 +32,9 @@ varB=varC;
 varC=temp;
 
 console.log(varA, varB, varC);  
+
+// também é possível resolver com:
+
+[varA, varB, varC] = [varB, varC, varA]
+
+console.log(varA, varB, varC);  
