@@ -25,9 +25,8 @@ window.alert(`O resultado foi: ${num3}`);
 let varA='A'; //B
 let varB='B'; //C
 let varC='C'; //A
-let temp;
+const temp=varA;
 
-temp=varA;
 varA=varB;
 varB=varC;
 varC=temp;
