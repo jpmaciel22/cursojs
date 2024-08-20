@@ -29,3 +29,11 @@ console.log(++contador);
 console.log(contador);
 
 //nota-se que já na primeira print o numero ja esta alterado para 2.
+
+// parseInt(); é utilizado para converter o valor para um inteiro. exemplo abaixo
+// Number(); é utilizado para converter para um número, tipagem number
+// ParseFloat(); é utilizado para converter para um ponto flutuante.
+const num40 = 10;
+const num50 = parseInt('5');
+console.log(num40 + num50);
+console.log(typeof num50);
