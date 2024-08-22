@@ -13,7 +13,7 @@ const boolean = 0; // apenas tem como possibilidade de valor 0 ou 1 ou true ou f
 console.log(typeof nome1, nome1); // a funcao typeof permite printar a tipagem da variavel.
 console.log(num1 ** num2);
 
-// exemplo de pré e pós incrementação:
+// exemplo de pré e pós incrementação
 
 // pós abaixo
 
