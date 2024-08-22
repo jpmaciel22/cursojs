@@ -28,4 +28,7 @@ const quadradoArrow = (x,y) => x**(y);
 
 console.log(quadradoArrow(9,3));
 
+//os valores enviados (9,3) são argumentos, já (x,y) criados na função são parametros
+// argumentos sao enviados por meio de parametros.
+
 
