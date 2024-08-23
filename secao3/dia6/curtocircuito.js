@@ -13,7 +13,7 @@ console.log('Joao' && NaN && 'Pedro');
 // exemplo de como pode ser prático abaixo, fazendo um IF rapidamente para a execucao de uma
 // funcao apenas quando for true outro valor
 function oi(){
-    return 'oi';
+    return 'oi';  //.
 };
 let executara = false;
 console.log(executara && oi()); // >> false , e nao executa 'oi'.
