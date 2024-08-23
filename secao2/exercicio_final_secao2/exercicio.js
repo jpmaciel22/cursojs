@@ -1,3 +1,5 @@
+// AULA 34
+
 function funcao(){
 const form = document.querySelector('.form'); 
 // a constante form está recebendo o valor apontado para a classe form no html
