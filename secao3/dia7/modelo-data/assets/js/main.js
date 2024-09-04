@@ -1,5 +1,5 @@
 let data = new Date();
-let diaNumeroSemana = new data.getDay()
+let diaNumeroSemana = data.getDay();
 
 
 function funcaoDefault(){
@@ -10,16 +10,16 @@ function funcaoDefault(){
 }
 
 function criah1(){
-    const h1 = document.createElement('h1'); // cria na var p o elemento paragrafo de HTML
+    const h1 = document.createElement('h1'); // cria na var h1 o elemento paragrafo de HTML
     return h1;
 }
 
 function setTextoDataBox(diaSemana,data){
-    let dataBox = document.querySelector('.dataBox');
-    textoDataBox = '';
+    const dataBox = document.querySelector('.dataBox');
+    dataBox.innerHTML = '';
     const h1 = criah1();
     h1.innerHTML = `${diaSemana},${data}`;
-    textoDataBox.appendChild(h1);
+    dataBox.appendChild(h1);
 
 }
 
