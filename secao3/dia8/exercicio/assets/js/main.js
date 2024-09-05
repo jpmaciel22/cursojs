@@ -5,23 +5,15 @@ const elementos = [
     {tag: 'section', texto:'Oi tudo bem'},
     ];
 
-function funcaoDefault(){
-    sectionTexto(elementos);
+const container = document.querySelector('.container');
+const div = document.createElement('div');
+
+
+
+for(let i = 0; i < elementos.length; i++){
+//console.log(elementos[i].tag);
+let {tag, texto} = elementos[i];
+console.log(tag);
+let tagDosElementos = document.createElement(tag);
+tagDosElementos.innerHTML = texto;
 }
-function sectionTexto(array){
-const section = document.querySelector('.container')
-const div = CriaElementos();
-section.appendChild(div);
-
-}
-
-
-function criaElementos(){
-    for(i = 0; i < 4;i++){
-        const elemento = document.createElement(elementos[i].tag);
-        console.log(elemento);
-        elementos[i].innerHTML = elementos[i].texto;
-    }
-}
-
-funcaoDefault();
