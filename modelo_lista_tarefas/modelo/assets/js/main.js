@@ -45,6 +45,7 @@ document.addEventListener('click',function(event){
      // tiver a na sua lista de classes a classe apagar, ele executara esta funcao
     elemento.parentElement.remove(); // com esta funcao ele acha no atributo parentElement o 
     // ''pai'' deste elemento, no caso os 'li' criados, já que os buttons sao child. 
+    saveTaskList();
     }
 })
 
@@ -66,7 +67,14 @@ function saveTaskList(){
     //  a string transformada de JSON que pode ser convertida novamente em array, é salva com o nome tarefas.
     // pode ser vista em inspecionar , application e LOCAL STORAGE.
 }
-
+function saveLocalStorage(){
+    const tarefas = localStorage.getItem('tarefas');
+    const listaDeTarefas = JSON.parse(tarefas); // converte novamente de string para o array.
+    for (i of listaDeTarefas){
+        criaTarefa(i);
+    }
+} // captura os dados salvos em localstorage na string , e os mostra novamente quando aberto o site.
+saveLocalStorage();
 
 // tentativa minha que deu certo de criar tarefas:
 // paragrafo = document.createElement('p');
