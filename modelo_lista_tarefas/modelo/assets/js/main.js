@@ -50,12 +50,21 @@ document.addEventListener('click',function(event){
 
 function saveTaskList(){
     const liDeTarefas = tarefas.querySelectorAll('li'); // seleciona todos os 'li' dentro da 'ul' tarefas
-// é o exercicio de nodelist e domtags.
     const listaDeTarefas = [];
+
     for (let i of liDeTarefas){
         let liTexto = i.innerText
         liTexto = liTexto.replace('🗑️',''); // para tirar o bug d salvar o lixinho junto do texto.
+        listaDeTarefas.push(liTexto); // fazemos isso para salvar o texto de cada um dos li neste array
+        // este for foi basicamente uma desestruturalizacao para poder salvar o texto de cada um dos li
     }
+
+    const liTextosJSON = JSON.stringify(listaDeTarefas); // isto serve para salvar este array
+    // listaDeTarefas em um JSON, que transforma em uma string direta que pode ser convertida novamente
+    // em um array para a página.
+    localStorage.setItem('tarefas',liTextosJSON); // aqui você salva em um storage do navegador
+    //  a string transformada de JSON que pode ser convertida novamente em array, é salva com o nome tarefas.
+    // pode ser vista em inspecionar , application e LOCAL STORAGE.
 }
 
 
