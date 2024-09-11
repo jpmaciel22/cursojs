@@ -29,3 +29,8 @@ body {
 input[type=text]:focus{
   border: 2px solid var(--primary-color-darker);
 }
+
+.imagem{
+  margin: 50px auto;
+  max-width: 50%;
+}
