@@ -12,7 +12,7 @@ inputNewTask.addEventListener('keypress', function(event){
         if (!inputNewTask.value) return;  // se for vazia retorna nada
         criaTarefa(inputNewTask.value);
     }
-})
+});
 
 function criaTarefa(texto){
     li = document.createElement('li');

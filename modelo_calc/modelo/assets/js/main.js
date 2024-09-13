@@ -1,3 +1,4 @@
+const sleep = ms => new Promise(r => setTimeout(r, ms));
 function criaCalculadora(){
     container = document.querySelector('.container');
     return{
@@ -9,6 +10,7 @@ function criaCalculadora(){
         inicia(){
             this.cliqueBotoes(); // é necessario chamar com this. antes pois se referencia a uma funcao
             // do proprio objeto.
+            this.pressionaEnter();
             this.btnClear();
         },
         cliqueBotoes(){
@@ -20,6 +22,7 @@ function criaCalculadora(){
             //  portanto funciona.
             // isto de bind pode ser substituido caso usassemos uma arrow function, ja que 
             // a arrow function nao permite a mudanca do valor do objeto de this.
+            this.display.focus();
             document.addEventListener('click',function(evento){
             const elemento = evento.target;
                 if(elemento.classList.contains('btn-num')){
@@ -44,7 +47,7 @@ function criaCalculadora(){
         },
 
         btnClear(){
-            this.display.value = ' '; // colocamos uma string vazia no texto interno, o seu valor.
+            this.display.value = ''; // colocamos uma string vazia no texto interno, o seu valor.
             this.display.focus(); // para sempre abrir o display
         },
 
@@ -54,13 +57,31 @@ function criaCalculadora(){
         },
 
         btnResultado(){
-            this.display.value = eval(this.display.value);
+            try{
+                this.display.value = eval(this.display.value);
+                if(!this.display.value){
+                    alert('Conta Invalida.')
+                    return;
+                }}
+                catch(e){
+                    alert('Conta Invalida.')      // este try e catch é para nao permitir invasores
+                    // de digitar comandos no display e deixar o site mais seguro.
+                    return;
+                }
+            },
             // o eval se aproveita de uma propriedade do javascript de tentar resolver strings
             // tratando as como number e faz a conta como se fosse numbers.
             // exemplo : eval("2+2")  resultado >> 4
+        pressionaEnter(){
+            this.display.addEventListener('keyup', evento  =>{
+                if(evento.keyCode === 13){
+                this.btnResultado();
+                }
+            });   // aqui novamente teria o erro e teria que usar bind, ja que o this mudaria de objeto para
+            //  o elemento da funcao, porem arrumamos isso nesse caso com arrow function para variar.
+            }
         }
-    };
-}
+    }
 
 const calculadora = criaCalculadora();
 calculadora.inicia();
