@@ -14,9 +14,10 @@ const metodoInterno = function(){
 this.nome = nome;
 this.sobrenome = sobrenome;
 this.soma = function(){
-
+return x+y;
 };
 }
 pessoa1 = new Pessoa('joao','maciel',1,2);
 
 console.log(pessoa1.nome)
+console.log(pessoa1.soma())
