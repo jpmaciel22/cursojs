@@ -21,5 +21,14 @@ const NomeDasPessoas = pessoas.map(valor => `${valor.nome}`);
 console.log(NomeDasPessoas);
 const IdadeDasPessoas = pessoas.map(valor => ({idade: valor.idade }));
 console.log(IdadeDasPessoas);
-const IDPessoas = pessoas.map((valor,index) => ({ID: index}));
+const IDPessoas = pessoas.map((valor,index) => ({ID: (index + 1) * 1000}));
 console.log(IDPessoas);
+
+// outra forma de fazer: 
+const ComIds = pessoas.map(function(valor,index){
+    const newValor = {...valor};
+    newValor.id = (index+1) *1000;
+    return newValor; 
+})
+console.log(pessoas);
+console.log(ComIds)
