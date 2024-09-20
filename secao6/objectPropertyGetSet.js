@@ -31,6 +31,17 @@ function Produto(nome,preco,estoque){
             configurable:false,
         },
     })
+
+    const criaProduto = (nome) =>{
+        return{
+            get nome(){
+                return nome;
+            },
+            set nome(valor){
+                nome = valor;
+            }
+        }
+    }
 }
 const o1 = new Produto('Camiseta',18);
 console.log(o1) // estoque manteve-se privado.
