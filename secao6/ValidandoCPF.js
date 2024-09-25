@@ -17,3 +17,6 @@ formula 11 - ( 284 % 11 ) = 2 ( segundo digito pós traço)
 se variar algum número, o cpf não é valido.
 */
 
+let cpf = ['124.856.857-92'];
+
+
