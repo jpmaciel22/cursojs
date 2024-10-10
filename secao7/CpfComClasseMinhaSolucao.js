@@ -2,16 +2,13 @@ class CpfValidacao{
     constructor(cpf){
         this.cpfLimpo = cpf.replace(/\D+/g, '');
     }
-    gerarOCpf(){
+    validacao(){
+      if(this.cpfLimpo.length !== 11) return false;
       const cpfParcial = this.cpfLimpo.slice(0, -2);
       const digito1 = CpfValidacao.criaDigito(cpfParcial);
       const digito2 = CpfValidacao.criaDigito(cpfParcial + digito1);
-      this.novoCpf = cpfParcial + digito1 + digito2;
-    }
-    validacao(){
-      if(this.cpfLimpo.length !== 11) return false;
-      this.gerarOCpf();
-      return this.novoCpf === this.cpfLimpo;
+      let novoCpf = cpfParcial + digito1 + digito2;
+      return novoCpf === this.cpfLimpo;
   }
    static criaDigito(cpfParcial){
       let soma = 0;
