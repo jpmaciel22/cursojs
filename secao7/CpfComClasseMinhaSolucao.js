@@ -6,12 +6,12 @@ class CpfValidacao{
       const cpfParcial = this.cpfLimpo.slice(0, -2);
       const digito1 = CpfValidacao.criaDigito(cpfParcial);
       const digito2 = CpfValidacao.criaDigito(cpfParcial + digito1);
-      this.novoCPF = cpfParcial + digito1 + digito2;
+      this.novoCpf = cpfParcial + digito1 + digito2;
     }
     validacao(){
       if(this.cpfLimpo.length !== 11) return false;
       this.gerarOCpf();
-      this.novoCpf === this.cpfLimpo;
+      return this.novoCpf === this.cpfLimpo;
   }
    static criaDigito(cpfParcial){
       let soma = 0;

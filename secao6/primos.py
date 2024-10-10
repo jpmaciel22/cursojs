@@ -1,6 +1,6 @@
-numero = 15
+numero = 13
 primalidade = 0
-for i in range(1,15):
+for i in range(2,13):
     if numero % i == 0:
         primalidade = 0
         break
