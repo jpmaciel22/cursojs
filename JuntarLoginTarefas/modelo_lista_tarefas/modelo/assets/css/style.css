@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+:root {
+  --primary-color: rgb(81, 91, 93);
+  --primary-color-darker: rgb(36, 36, 36);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: 'Verdana', sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+.container {
+  max-width: 640px;
+  margin: 50px auto;
+  background: #303030;
+  padding: 20px;
+  border-radius: 10px;
+  color:rgb(255, 251, 247);
+}
+
+input[type=text]{
+  border: 2px solid var(--primary-color-darker);
+  color:rgb(255, 251, 247);
+}
+
+.imagem{
+  margin: 30px 25% auto;
+  max-width: 50%;
+  border: 5px solid  #303030
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #1c1c1c #303030;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #303030;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+  }
+
+
+.inputNewTask {
+  background-color: #1c1c1c;
+}
+
+.btnAddTask{
+  background-color: #1c1c1c;
+  color: rgb(255, 251, 247);
+}
