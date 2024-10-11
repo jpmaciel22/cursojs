@@ -6,6 +6,8 @@ function rand(min, max){
 
 function EsperaAi(msg,tempo){
     return new Promise((resolve, reject) => {
+        if(typeof msg !== 'string') reject ('Bad Value.');
+
         setTimeout(() => {
             resolve(msg);
         }, tempo);
@@ -15,11 +17,11 @@ function EsperaAi(msg,tempo){
 console.log(EsperaAi('OI',rand(1,3))
 .then(resposta => {
     console.log(resposta);
-    return EsperaAi('OI 2',rand(1,3));
+    return EsperaAi(2,rand(1,3));
 }).then(resposta => {
     console.log(resposta);
     return EsperaAi('OI 3',rand(1,3));
 }).then(resposta => {
     console.log(resposta);
 })
-.catch())
+.catch(erro => {console.log('ERRO', erro)}))
