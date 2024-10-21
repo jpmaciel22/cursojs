@@ -18,7 +18,7 @@ export default function geraSenha(qtd, maiusculas, minusculas, numeros, simbolos
     const senhaArray = [];
     qtd = Number(qtd);
     if( maiusculas == false && minusculas == false &&  numeros == false && simbolos == false){
-        return undefined;
+        return false;
     }
     for (let i = 0; i < qtd; i++) {
         if (maiusculas) senhaArray.push(geraMaiuscula());

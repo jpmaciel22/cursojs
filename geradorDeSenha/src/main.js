@@ -1,5 +1,5 @@
 import './assets/css/style.css';
-import geraSenha from "./geradores";
+import geraSenha from "./modules/geradores";
 
 const senhaGerada = document.querySelector('.senha-gerada');
 const qtdCaracteres = document.querySelector('.qtd-caracteres');
@@ -21,6 +21,6 @@ function gera() {
         checkNumeros.checked,
         checkSimbolos.checked
     );
-
-    return senha || `Nada Selecionado.`;
+    if(senha == false){return 'Nada selecionado.'}
+    return senha;
 }
