@@ -1,0 +1,4 @@
+colocar " import 'regenerator-runtime/runtime'; " no topo das importacoes
+já ira resolver este problema no chrome, porém no IE ainda nao funciona.
+Para resolver no IE importa antes do runtime:
+" import 'core-js/stable'; "

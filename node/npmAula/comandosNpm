@@ -1,0 +1,7 @@
+npm install
+npm uninstall
+npm install express@4.1.1                   ( caso eu queira uma versao especifica)
+npm install express --save-dev              (salvar na dependencia de dev)
+npm install express --save-prod              (salvar na producao)
+npm update
+npm outdated
