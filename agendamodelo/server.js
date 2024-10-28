@@ -27,7 +27,7 @@ const routes = require('./routes') // rotas da APLICACAO
 const path = require('path');// ajuda a trabalhar com os caminhos
 const helmet = require('helmet'); 
 const csrf = require('csurf');// ajuda na seguranca
-const { MiddlewareGlobal, checkCrsfError, crsfMiddleware } = require('./src/middlewares/middleware');
+const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
 
 app.use(helmet()) // irei comentar isso pois pode dar erro no localhost, porem em servidores normais é bom utilizar
 // para a seguranca do sistema
@@ -55,7 +55,7 @@ app.set('view engine', 'ejs'); // setando a view engine
 app.use(csrf());
 
 //nossos proprios middlewares
-app.use(MiddlewareGlobal);
+app.use(middlewareGlobal);
 app.use(checkCsrfError)
 app.use(csrfMiddleware)
 app.use(routes);
