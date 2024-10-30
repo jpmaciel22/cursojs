@@ -7,7 +7,7 @@ const app = express();
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
 // para esconder o usuario e senha usa-se o .env e faz que nem o processo abaixo no mongoose.connect
-mongoose.connect(process.env.CONNECTIONSTRING /**, {useNewUrlParser: true, useUnifiedTopology: true} */)
+mongoose.connect(process.env.CONNECTIONSTRING, /**  {useNewUrlParser: true, useUnifiedTopology: true} */)
 .then(() => {
     console.log('MongoDB conectado.')
     app.emit('Mongo conectado')
@@ -41,8 +41,10 @@ const sessionOptions = session({
     resave: false,
     saveUninitialized: false,
     cookie: {
+        //milisegundo*min*hora*dia*Qtd de dias
         maxAge: 1000 * 60 * 60 * 24 * 7,
-        httpOnly: true
+        httpOnly: true,
+        secure:false
 
     }
 });
@@ -50,6 +52,7 @@ app.use(sessionOptions);
 app.use(flash());
 
 app.set('views', path.resolve(__dirname, 'src', 'views')); // setando a pasta de views
+ // forma absoluta - utilizando path e __dirname
 app.set('view engine', 'ejs'); // setando a view engine 
 
 app.use(csrf());

@@ -1,5 +1,8 @@
 exports.middlewareGlobal = (req, res, next) => {
-  res.locals.umaVariavelLocal = 'Este é o valor da variável local.';
+  res.locals.errors = req.flash('errors');
+  res.locals.success = req.flash('success');
+  // Para capturar as mensagens de errors e jogar numa variavel, chamada errors, usavel nos arquivos ejs 
+  res.locals.user = req.session.user;
   next();
 };
 
