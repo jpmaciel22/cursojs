@@ -26,6 +26,7 @@ const flash = require('connect-flash');
 const routes = require('./routes') // rotas da APLICACAO
 const path = require('path');// ajuda a trabalhar com os caminhos
 const helmet = require('helmet'); 
+app.use(helmet.referrerPolicy({ policy: ["origin", "unsafe-url"] }));
 const csrf = require('csurf');// ajuda na seguranca
 const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
 
