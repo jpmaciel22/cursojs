@@ -28,7 +28,7 @@ exports.register = async (req,res) => {
 
 exports.editIndex = async function(req,res){
   try{
-    if(req.session.user){
+  if(req.session.user){
   if(!req.params.id) return res.render('404');
   
   const contato = await Contato.buscaPorId(req.params.id);
@@ -42,7 +42,7 @@ exports.editIndex = async function(req,res){
     email: contato.email,
     idUser: contato.idUser
 }
-  res.render('contato', { contato });
+return res.render('contato', { contato });
 }
 return res.render('login');}
 catch(error){
@@ -51,7 +51,7 @@ catch(error){
 
 exports.edit = async function(req,res){
   try{
-    if(req.session.user){}
+  if(req.session.user){
   if(!req.params.id) return res.render('404');
 
   const contato = new Contato(req.body, req.session.user.email);
@@ -64,18 +64,19 @@ exports.edit = async function(req,res){
       _id: idUser,
       nome: contato.nome,
       sobrenome: contato.sobrenome,
-      cel: contato.cel,
+      telefone: contato.telefone,
       email: contato.email,
       idUser: contato.idUser
       }
-      req.session.save(() => res.render('/contato',{body: req.session.contato, errors: contato.errors}));
+      req.session.save(() => res.render('contato',{body: req.session.contato, errors: contato.errors}));
+      req.session.contato._id = idUser;
     // req.session.save(() => res.redirect(`/contato/${req.params.id}`)); // n sei pq mas n funciona se for igual
     // // ao de baixo
-    return;
-  }
-  req.flash('success','Contato editado com sucesso.');
-  idUser = contato.contato._id;
-  req.session.save(() => res.redirect(`/contato/${contato.contato._id}`));
+    return;}
+ 
+    req.flash('success','Contato editado com sucesso.');
+    idUser = contato.contato._id;
+  req.session.save(() => res.redirect(`/contato/${contato.contato._id}`));}
   return;}
   catch(erro){
     res.render('404');

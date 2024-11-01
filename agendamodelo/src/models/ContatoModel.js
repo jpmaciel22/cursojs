@@ -7,7 +7,7 @@ const ContatoSchema = new mongoose.Schema({
   email: { type: String, required: false, default: '' },
   telefone: { type: String, required: true },
   criadoEm: {type: Date, required: false, default: Date.now},
-  idUser: { type: String, required: false /**true */ }
+  idUser: { type: String, required: true /**true */ }
 },
 { collection: 'contatos' });
 
