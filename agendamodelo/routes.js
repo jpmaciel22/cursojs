@@ -8,6 +8,7 @@ const { loginRequired } = require('./src/middlewares/middleware')
 
 // Rotas da home
 route.get('/', homeController.index);
+// route.get('/:id', homeController.index )
 //Rotas de login
 route.get('/login', loginController.index)
 route.post('/login/register', loginController.register)

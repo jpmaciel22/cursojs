@@ -7,10 +7,10 @@ const ContatoSchema = new mongoose.Schema({
   email: { type: String, required: false, default: '' },
   telefone: { type: String, required: true },
   criadoEm: {type: Date, required: false, default: Date.now}
+  // userId: {type:, required: true, }
 });
 
 const ContatoModel = mongoose.model('Contato', ContatoSchema);
-
 function Contato(body) {
   this.body = body;
   this.errors = [];
@@ -24,7 +24,7 @@ Contato.buscaPorId = async function (id){
  return contato;
 }
 
-Contato.buscaContatos = async function(){
+Contato.buscaContatos = async function(id){
   const contatos = await ContatoModel.find()
   .sort({criadoEm: -1});
   return contatos;
