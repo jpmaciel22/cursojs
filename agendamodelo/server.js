@@ -7,7 +7,9 @@ const app = express();
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
 // para esconder o usuario e senha usa-se o .env e faz que nem o processo abaixo no mongoose.connect
-mongoose.connect(process.env.CONNECTIONSTRING, /**  {useNewUrlParser: true, useUnifiedTopology: true} */)
+mongoose.connect(process.env.CONNECTIONSTRING,
+     /**  {useNewUrlParser: true, useUnifiedTopology: true} */
+    {useFindAndModify: false})
 .then(() => {
     console.log('MongoDB conectado.')
     app.emit('Mongo conectado')
