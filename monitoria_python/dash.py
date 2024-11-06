@@ -60,7 +60,7 @@ with col2:
     top5 = filmes_mais_assistidos.head(5).reset_index()
     top5.index += 1
     top5.columns = ['Filme', 'Público']
-    st.write(top5)
+    st.write(filmes_mais_assistidos_sortado)
     
 
 st.dataframe(df_filtrado)
@@ -75,3 +75,15 @@ with graf1:
 
     fig = px.bar(dados, x='DATA_EXIBICAO', y='PUBLICO', labels={'DATA_EXIBICAO': 'Mês de exibição', 'PUBLICO':'Público'}, title='Público por mês')
     graf1.plotly_chart(fig)
+
+st.title('Busca')
+st.divider()
+col4, col5 = st.columns([1,2])
+with col4:
+   buscar_filme= col4.text_input('Busca por filme:',placeholder='Digite o nome do filme')
+   dados = df_filtrado[df_filtrado['TITULO_BRASIL'].str.contains(buscar_filme,case=False)]
+   dados = dados.groupby(['TITULO_BRASIL'])['PUBLICO'].sum().reset_index()
+   if len(dados)>0:
+       col5.dataframe(dados,hide_index=True,use_container_width=True)
+   else:
+       col5.write('Nenhum filme encontrado')
