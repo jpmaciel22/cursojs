@@ -1,3 +1,4 @@
+#forma certa abaixo
 n = int(input('Quantas temperaturas quer inserir? '))
 temperaturas = []
 for i in range(n):
@@ -16,3 +17,21 @@ for i in temperaturas:
 print(f'Maior: {maior}')
 print(f'Menor: {menor}')
 print(f'Média: {soma/n:.2f}')
+
+#forma burra abaixo
+n = int(input('Insira o número de temperaturas que quer inserir: '))
+temperaturas = [0] * n # substituto burro de .append
+maior = None
+menor = None
+for i in range(n):
+    temperaturas[i] = int(input('Insira as temperaturas: '))
+    if maior is None or temperaturas[i] > maior:
+        maior = temperaturas[i]
+    if menor is None or temperaturas[i] < menor:
+        menor = temperaturas[i]
+soma = sum(temperaturas)
+media = soma/n
+print(temperaturas)
+print(f'Menor: {menor}')
+print(f'Maior: {maior}')
+print(f'Média: {media:.2f}')

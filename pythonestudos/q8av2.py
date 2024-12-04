@@ -1,6 +1,5 @@
 n = int(input('Insira um número primo: '))
 primos = []
-
 for i in range(2,n+1): # pegamos 5 por exemplo, o +1 para ir ate 6 e assim fazer de 2 a 5 e incluir ele.
     status = 1
     for j in range(2,i): # aq comeca com 2, da errado, dps vira 3, da errado, dps 4 da errado e acaba
