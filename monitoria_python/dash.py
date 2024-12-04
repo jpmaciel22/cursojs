@@ -87,3 +87,4 @@ with col4:
        col5.dataframe(dados,hide_index=True,use_container_width=True)
    else:
        col5.write('Nenhum filme encontrado')
+       
