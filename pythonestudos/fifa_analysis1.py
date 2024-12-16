@@ -14,3 +14,4 @@ plt.xticks(intervalos)
 plt.ylabel('Número de jogadores')
 plt.title('ƒ = N(overall) ⊂ U = FIFA 2018')
 plt.show()
+

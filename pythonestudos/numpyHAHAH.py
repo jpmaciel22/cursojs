@@ -27,8 +27,39 @@ randomint.min() #retorna o menor
 randomint.argmax() #retorna o index do maior
 randomint.argmin() #retorna o index do menor
 randomint.shape #retorna o formato do array/matriz sendo este um atributo e nao funcao.
+arr = np.arange(0,11)
+arr[0:5]=100
+#resultado: [100,100,100,100,100,5,6,7,8,9..]
+slice_of_arr = arr[0:6]
+slice_of_arr[:]=99 # muda tudo do array pra 99
+#isso muda também os numeros no 'arr' de 0 a 6, já que o slice_of_arr
+#nao é uma copia mas sim uma referencia aqle array.
+#para copiar:
+arr_copy = arr.copy()
+arr_2d = np.array(([5,10,15],[20,25,30],[35,40,45]))
+# a oredm para invocar uma posicao é arr_2d[linha][coluna]
+arr_2d[1][0] # resultado: 20
+arr_2d[:2,1:] # resultado: array([[10, 15],
+#                               [25, 30]])
 
 
+
+# para fazer de forma mais elegante:
+arr2d = np.zeros((10,10))
+arr_length = arr2d.shape[0]
+for i in range(arr_length):
+    arr2d[i] = i
+# o resultado sera uma matriz de 10x10 com linhas com os mesmos numeros de i:
+# array([[0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],
+#        [1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],
+#        [2., 2., 2., 2., 2., 2., 2., 2., 2., 2.],
+#        [3., 3., 3., 3., 3., 3., 3., 3., 3., 3.],
+#        [4., 4., 4., 4., 4., 4., 4., 4., 4., 4.],
+#        [5., 5., 5., 5., 5., 5., 5., 5., 5., 5.],
+#        [6., 6., 6., 6., 6., 6., 6., 6., 6., 6.],
+#        [7., 7., 7., 7., 7., 7., 7., 7., 7., 7.],
+#        [8., 8., 8., 8., 8., 8., 8., 8., 8., 8.],
+#        [9., 9., 9., 9., 9., 9., 9., 9., 9., 9.]])
 
 
 
