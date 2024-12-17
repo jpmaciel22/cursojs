@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Conversão de Base</title>
 </head>
-<body>
+<body class="body">
     <h1>Decimal para hexadecimal</h1>
     <table>
         <tr>
@@ -34,6 +35,36 @@
         <tr>
             <td>Resultado em decimal: </td>
             <td><div class="resultadoDecimal"></div></td>
+        </tr>
+    </table>
+    <h1>Binário para decimal</h1>
+    <table>
+        <tr>
+            <td>
+             <input type="text" name="texto" class="textodb" placeholder="Insira o binário">   
+            </td>
+            <td>
+             <button class="botaodb">Clique-me</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Resultado em decimal: </td>
+            <td><div class="resultadodb"></div></td>
+        </tr>
+    </table>
+    <h1>Decimal para binário</h1>
+    <table>
+        <tr>
+            <td>
+             <input type="text" name="texto" class="textoBinario" placeholder="Insira o decimal">   
+            </td>
+            <td>
+             <button class="botaoBinario">Clique-me</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Resultado em binário: </td>
+            <td><div class="resultadoBinario"></div></td>
         </tr>
     </table>
 </body>

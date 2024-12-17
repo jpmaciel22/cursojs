@@ -6,11 +6,42 @@ const resultadoDivDecimal = document.querySelector('.resultadoDecimal')
 const decimalInput = document.querySelector('.textoDecimal')
 const botaoDecimal = document.querySelector('.botaoDecimal')
 
+const textodb = document.querySelector('.textodb')
+const botaodb = document.querySelector('.botaodb')
+const resultadodb = document.querySelector('.resultadodb');
+
+
+const textoBinario = document.querySelector('.textoBinario')
+const botaoBinario = document.querySelector('.botaoBinario')
+const resultadoBinario = document.querySelector('.resultadoBinario');
+
+
 const executaHex = () => {
     botaoHex.addEventListener('click',e => {
     const el = e.target;
     const decimal = parseInt(hexInput.value);
     calcularHex(decimal);
+    })
+}
+
+const executaBinario = () => {
+    botaoBinario.addEventListener('click',e => {
+    const el = e.target;
+    const binario = parseInt(textoBinario.value);
+    calcularBinario(binario);
+    })
+}
+
+const calcularBinario = (binario) => {
+    const binarioD = parseInt(binario,10).toString(2)
+    resultadoBinario.innerHTML = binarioD
+}
+
+const executadb = () => {
+    botaodb.addEventListener('click',e => {
+    const el = e.target;
+    const decimalb = parseInt(textodb.value);
+    calcularDecimalB(decimalb);
     })
 }
 
@@ -20,6 +51,14 @@ const executaDecimal = () => {
     const hex = parseInt(decimalInput.value);
     calcularDecimal(hex);
     })
+}
+calcularDecimalB = (decimalb) => {
+    divisoesSucessivasDecimalB(decimalb)
+}
+
+divisoesSucessivasDecimalB = (decimalb) => {
+    const decimal = parseInt(decimalb,2)
+    resultadodb.innerHTML = decimal
 }
 
 const calcularDecimal = (hex) => {
@@ -85,5 +124,5 @@ resultadoDivHex.innerHTML = '0x'+hex
 
 executaHex();
 executaDecimal();
-// executarBinario();
-// executarDeciParaBinario();
+executaBinario();
+executadb();
