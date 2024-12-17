@@ -20,7 +20,7 @@ const executaHex = () => {
     botaoHex.addEventListener('click',e => {
     const el = e.target;
     const decimal = parseInt(hexInput.value);
-    calcularHex(decimal);
+    divisoesSucessivasHex(decimal);
     })
 }
 
@@ -41,7 +41,7 @@ const executadb = () => {
     botaodb.addEventListener('click',e => {
     const el = e.target;
     const decimalb = parseInt(textodb.value);
-    calcularDecimalB(decimalb);
+    divisoesSucessivasDecimalB(decimalb)
     })
 }
 
@@ -49,20 +49,13 @@ const executaDecimal = () => {
     botaoDecimal.addEventListener('click',e => {
     const el = e.target;
     const hex = parseInt(decimalInput.value);
-    calcularDecimal(hex);
+    divisoesSucessivasDecimal(hex)
     })
-}
-calcularDecimalB = (decimalb) => {
-    divisoesSucessivasDecimalB(decimalb)
 }
 
 divisoesSucessivasDecimalB = (decimalb) => {
     const decimal = parseInt(decimalb,2)
     resultadodb.innerHTML = decimal
-}
-
-const calcularDecimal = (hex) => {
-    divisoesSucessivasDecimal(hex)
 }
 
 // const  divisoesSucessivasDecimal = (hex) => {  // expressao regular para verificar
@@ -93,10 +86,6 @@ const  divisoesSucessivasDecimal = (hex) => {  // expressao regular para verific
    const decimal = Number(hex)
      resultadoDivDecimal.innerHTML = decimal
  }
-
-const calcularHex = (decimal) => {
-    divisoesSucessivasHex(decimal);
-}
 
 const divisoesSucessivasHex = (decimal) => {
     let quociente =  Math.floor(decimal / 16);
