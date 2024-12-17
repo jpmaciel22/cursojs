@@ -26,31 +26,30 @@ const calcularDecimal = (hex) => {
     divisoesSucessivasDecimal(hex)
 }
 
-const  divisoesSucessivasDecimal = (hex) => {
-    const regex = /[A-F]/;  // expressao regular para verificar
-    const arrayDoHex = hex.split('')
-    if(regex.test(hex)){
-        const hexNumerico = hex.replace(regex, match => {
-            switch(match.toUpperCase()) {
-                case 'A': return '10';
-                case 'B': return '11';
-                case 'C': return '12';
-                case 'D': return '13';
-                case 'E': return '14';
-                case 'F': return '15';
-                default: return match; 
-            }
-        });
-        arrayDoHex = hexNumerico.split('')
+const  divisoesSucessivasDecimal = (hex) => {  // expressao regular para verificar
+    hex = String(hex).toUpperCase();
+     let hexNumerico = hex.toUpperCase().replace(/[A-F]/g, match => {
+        switch (match) {
+            case 'A': return '10';
+            case 'B': return '11';
+            case 'C': return '12';
+            case 'D': return '13';
+            case 'E': return '14';
+            case 'F': return '15';
+            default: return match; // Não altera números já existentes
+        }
+    });
+    let decimal = 0;
+    let length = hexNumerico.length;
+    for(i in hexNumerico){
+        const digit = parseInt(hexNumerico[i], 10);
+        const power = length - i - 1;
+        decimal += digit * Math.pow(16, power); 
     }
-    for(i in arrayDoHex){
-        arrayDoHex[i] = arrayDoHex[i] * (16*i)
-    }
-    const decimal = arrayDoHex.join('')
-    resultadoDivHex.innerHTML = decimal
+    resultadoDivDecimal.innerHTML = decimal
 
 }
- 
+
 const calcularHex = (decimal) => {
     divisoesSucessivasHex(decimal);
 }
