@@ -12,7 +12,7 @@ console.log(num1 * 'ola'); // retorna NaN, e para verificar isso usa-se Number.i
 float = parseFloat(float.toFixed(2)); // salva o valor de float com as casas corrigidas.
 // o mesmo pode ser feito também como:
 float = Number(float.toFixed(2));
-
+float = Math.trunc(float) // transforma o numero em inteiro apagando as partes float.
 
 // AULA 27 - OBJETO MATH
 
