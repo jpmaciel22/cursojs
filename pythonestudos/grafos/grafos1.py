@@ -49,9 +49,8 @@ print(A.todense())
 G['v1']['v2']['peso'] = 5
 G['v2']['v3']['peso'] = 10
 G['v3']['v4']['peso'] = 2
-G['v4']['v5']['peso'] = 7
-G['v5']['v11']['peso'] = 4  # Note: There appears to be a typo here - 'peso' instead of 'peso'
-G['v2']['v4']['peso'] = 8
+G['v4']['v5']['peso'] = 8
+G['v5']['v1']['peso'] = 4 
 
 # Lista cada aresta e seus respectivos pesos
 print('Adicionando pesos as arestas')
@@ -59,5 +58,9 @@ for edge in G.edges():
     u = edge[0]
     v = edge[1]
     print('O peso da aresta', edge, 'vale ', G[u][v]['peso'])
-input()
-print()
+
+# usar o matplot para mostrar o grafo como imagem:
+plt.figure('Grafos')
+
+nx.draw_networkx(G, pos=nx.spring_layout(G), with_labels=True)
+plt.show()
