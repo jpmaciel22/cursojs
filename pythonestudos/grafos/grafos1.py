@@ -59,8 +59,19 @@ for edge in G.edges():
     v = edge[1]
     print('O peso da aresta', edge, 'vale ', G[u][v]['peso'])
 
-# usar o matplot para mostrar o grafo como imagem:
+#usar o matplot para mostrar o grafo como imagem:
 plt.figure('Grafos')
-
 nx.draw_networkx(G, pos=nx.spring_layout(G), with_labels=True)
+plt.show()
+
+#com grafos direcionados:
+GD = nx.DiGraph()
+nodes = ['João', 'Manoel', 'Kauã', 'Natã', 'Kleberton']
+GD.add_nodes_from(nodes)
+edges = [('João', 'Manoel'), ('Kauã', 'Manoel'), ('João', 'Natã'), ('Kleberton', 'João'), ('Manoel', 'João')]
+GD.add_edges_from(edges)
+
+plt.figure('Grafos Direcionados', figsize=(10,6))
+# nx.draw_networkx(GD, pos=nx.spring_layout(GD), with_labels=True)
+nx.draw_networkx(GD, pos=nx.kamada_kawai_layout(GD), with_labels=True, node_size=1000, node_color='skyblue', font_size=16,)
 plt.show()
